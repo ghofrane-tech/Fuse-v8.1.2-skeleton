@@ -1,8 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms'
-import { POINT_CONVERSION_UNCOMPRESSED } from 'constants';
-
 // import { HttpClient } from "@angular/common/http";
 
 @Component({
@@ -13,36 +10,32 @@ import { POINT_CONVERSION_UNCOMPRESSED } from 'constants';
 export class ImagesComponent implements OnInit {
     list: any = [];
     urlk: string = "http://localhost:3000/photo/";
-    selectedFile: File = null;
-    myForm: FormGroup;
-    selectedItemsList = [];
-  checkedIDs = [];
-    // selectedValue: null;
-
     constructor(private http: HttpClient) {}
-    
-
-  
-
 
     ngOnInit() {
-     
-        
-        this.http.get(`http://localhost:4000/images`).subscribe(
-            (res) => {
-                console.log("inside al")
-                console.log(res);
-                this.list = res;
-                this.list.forEach(element => element['checked']=false);
-                console.log("desplaing list")
-               
+        this.http.get(`http://localhost:4000/videos`).subscribe(
+        //     (res) => {
+        //         console.log(res);
+        //         this.list = res;
+        //     },
+        //     (err) => {
+        //         console.log(err);
+        //     }
+        // );
+        (res) => {
+            console.log("inside al")
+            console.log(res);
+            this.list = res;
+            this.list.forEach(element => element['checked']=false);
+            console.log("desplaing list")
+           
 
-                console.log(this.list)
-            },
-            (err) => {
-                console.log(err);
-            }
-        );
+            console.log(this.list)
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
         console.log("hello world");
         // setTimeout(function () {
         //     var gallery = document.querySelector("#gallery");
@@ -96,47 +89,9 @@ export class ImagesComponent implements OnInit {
         //
         console.log("hello world");
     }
-    show1(MyInput,Input,AInput,Input2,Input3,Input4,Input5){
-    // { console.log(MyInput.value)
-    //     console.log(Input.value)
-    //     // console.log(AInput.value)
-    //      console.log(Input2.value)
-       
-    // }
-      let A=  MyInput.value;
-      let B=  Input.value;
-      let C=  AInput.value;
-      let D= Input2.value; 
-      let E=  Input3.value;
-      let G= Input4.value;
-      let H= Input5.value;
-
-      let pictues=[];  
-     console.log(this.list);
-     this.list.forEach(
-         element => {
-             if(element.checked===true)
-    pictues.push(element.image);
-         }
-     )
-     console.log(pictues)
-     this.http
-            .post(`http://localhost:4000/show1`,{ A, B , C , D,E,G,H, image:pictues }).subscribe(
-                (res) => {
-                    console.log(res);
-                },
-                (err) => {
-                    console.log(err);
-                }
-            )}
-    
-
-
-    
-
     delete(id) {
         console.log(id);
-        this.http.delete(`http://localhost:4000/image/` + id).subscribe(
+        this.http.delete(`http://localhost:4000/videos/` + id).subscribe(
             (res) => {
                 console.log(res);
                 this.list = this.list.filter(function (item) {
@@ -148,11 +103,44 @@ export class ImagesComponent implements OnInit {
             }
         );
     }
+    show2(MyInput,Input,AInput,Input2,Input3,Input4,Input5){
+        // { console.log(MyInput.value)
+        //     console.log(Input.value)
+        //     // console.log(AInput.value)
+        //      console.log(Input2.value)
+           
+        // }
+          let A=  MyInput.value;
+          let B=  Input.value;
+          let C=  AInput.value;
+          let D= Input2.value; 
+          let E=  Input3.value;
+          let G= Input4.value;
+          let H= Input5.value;
+    
+          let pictues=[];  
+         console.log(this.list);
+         this.list.forEach(
+             element => {
+                 if(element.checked===true)
+        pictues.push(element.video);
+             }
+         )
+         console.log(pictues)
+         this.http
+                .post(`http://localhost:4000/show2`,{ A, B , C , D,E,G,H, video:pictues }).subscribe(
+                    (res) => {
+                        console.log(res);
+                    },
+                    (err) => {
+                        console.log(err);
+                    }
+                )}
 
-    add(image) {
-        console.log(image);
+    add(video) {
+        console.log(video);
         this.http
-            .post(`http://localhost:4000/image/favorit`, { image })
+            .post(`http://localhost:4000/video/favorit`, { video })
             .subscribe(
                 (res) => {
                     console.log(res);
@@ -162,55 +150,4 @@ export class ImagesComponent implements OnInit {
                 }
             );
     }
-    show(item,temp) {
-        console.log(item);
-        console.log(temp)
-        this.http.get (`http://localhost:4000/show/`+item.image+`/`+temp).subscribe(
-            (res) => {
-                console.log(res);
-            },
-            (err) => {
-                console.log(err);
-            }
-        );
-    }
-    
-    kill()
-    {
-        this.http.get (`http://localhost:4000/kill`).subscribe(
-            (res) => {
-                console.log(res);
-            },
-            (err) => {
-                console.log(err);
-            }
-        ); 
-    }
-//  toggleEditable(event,item) {
-//       if ( event.target.checked ) 
-//       list : [item.image]}
-// affiche(item) {           
-// this.http.get (`http://localhost:4000/affiche`+item.image).subscribe(
-//  (res) => {
-//    console.log(res);
-//  },
-//   (err) => {
-//      console.log(err);
-//           }
-//     );
-//       }
-//     }
-
- 
-//   changeSelection() {
-//     this.fetchSelectedItems()
-//   }
- 
-//   fetchSelectedItems() {
-//     this.selectedItemsList = this.list.filter((value, index) => {
-// e
-// }
-//    affiche() {
-//     console.log(this.selectedValue);
-// }
 }

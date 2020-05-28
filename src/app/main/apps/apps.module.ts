@@ -68,6 +68,11 @@ const routes = [
         path: "uploadimage",
         loadChildren: "./uploadimage/uploadimage.module#UploadimageModule",
     },
+    
+    {
+        path: "uploadvideo",
+        loadChildren: "./uploadvideo/uploadimage.module#UploadimageModule",
+    },
     {
         path: "favoritimages",
         loadChildren:
@@ -75,8 +80,17 @@ const routes = [
     },
     {
         path: "videos",
-        loadChildren: "./videos/videos.module#VideosModule",
+        loadChildren: "./videoss/images.module#ImagesModule",
     },
+    {
+        path: "favoritvideos",
+        loadChildren:
+            "./favoritvideos/favoritimages.module#FavoritimagesModule",
+    },
+    // {
+    //     path: "videos",
+    //     loadChildren: "./videos/videos.module#VideosModule",
+    // },
     {
         path: "light",
         loadChildren: "./light/light.module#LightModule",

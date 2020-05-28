@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { VideosComponent } from './videos.component';
+import { FavoritimagesComponent } from './favoritimages.component';
 
 
 const routes: Routes = [
-  { path: '', component: VideosComponent }
+  { path: '', component: FavoritimagesComponent }
 ];
 
 @NgModule({
-  declarations: [VideosComponent],
+  declarations: [FavoritimagesComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ]
 })
-export class VideosModule { }
+export class FavoritimagesModule { }

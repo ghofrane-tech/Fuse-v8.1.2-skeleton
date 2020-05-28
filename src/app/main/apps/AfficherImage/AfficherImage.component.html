@@ -1,0 +1,30 @@
+<div class="Neon Neon-theme-dragdropbox">
+    <input
+        style="
+            opacity: 0;
+            width: 320px;
+            height: 200px;
+            position: absolute;
+            right: 0px;
+            left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        "
+       name="files[]"
+       id="filer_input2"
+       #imageInput
+       type="file"
+       accept="image/*"
+       (change)="onFileChanged($event)"
+       />
+    </div>
+    <a class="forgot-password"></a> <br />
+    <button
+    mat-raised-button
+    color="primary"
+    (click)="affiche()"
+    
+
+     >
+    Save
+    </button>

@@ -67,9 +67,13 @@ const appRoutes: Routes = [
     },
     { path: 'uploadimage', loadChildren: () => import('./main/apps/uploadimage/uploadimage.module').then(m => m.UploadimageModule) },
     { path: 'favoritimages', loadChildren: () => import('./main/apps/favoritimages/favoritimages.module').then(m => m.FavoritimagesModule) },
-    { path: 'videos', loadChildren: () => import('./main/apps/videos/videos.module').then(m => m.VideosModule) },
+    // { path: 'videos', loadChildren: () => import('./main/apps/videos/videos.module').then(m => m.VideosModule) },
+    // { path: 'uploadvideo', loadChildren: () => import('./main/apps/uploadvideo/uploadimage.module').then(m => m.UploadimageModule) },
     { path: 'light', loadChildren: () => import('./main/apps/light/light.module').then(m => m.LightModule) }
+   
+
 ];
+
 
 @NgModule({
     declarations: [AppComponent],

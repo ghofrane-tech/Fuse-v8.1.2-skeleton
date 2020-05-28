@@ -1,133 +1,15 @@
-<div id="bande_horizontale">
-<label for="ticketNum">temps  :</label>
-<input #MyInput type = 'number' name="ticketNum" value='0' min='0' max='5000' >
-<!-- <label for="ticketNum">jour : </label>
-<input  #Input type='number' name="ticketNum" value='0' min='0' max= '30'> -->
-<label for="start">Start date:</label>
-
-<input #Input type="date" id="start" name="trip-start"
-       value="2020-01-01"
-       min="2020-01-01" max="2020-12-31">
-<label for="ticketNum">heure :</label>
-<input  #AInput type='number' name="ticketNum" value='0' min='0' max= '23'>
-<label for="ticketNum">minutes :</label>
-<input  #Input2 type="number" name="ticketNum" value='0' min='0' max= '59'>
-<label for="ticketNum">seconde :</label>
-<input  #Input3 type="number" name="ticketNum" value='0' min='0' max= '3599' >
-<label for="ticketNum">heure Actuelle :</label>
-<input  #Input4 type='number' name="ticketNum" value='0' min='0' max= '23'>
-<label for="ticketNum">minutes Actuelle :</label>
-<input  #Input5 type="number" name="ticketNum" value='0' min='0' max= '59'>
-
-<!-- <input #MyInput type = 'number'>
-<input #Input type = 'number'> -->
-<!-- <input #Input2 type = 'number'>
-<input #Input3 type = 'number'> -->
- <!-- <input #Input type="time"step="1"> -->
-<button
-color="primary"
-style="transform: scale(0.8);"
-(click)="show1(MyInput,Input,AInput,Input2,Input3,Input4,Input5)"
->
-Afficher
-</button>
-
-
 <div class="box">
     <div class="card" *ngFor="let item of list">
         <div class="imgBx">
             <img
-                src="http://localhost:4000/img/{{ item.image }}"
-                alt="images"
+                src="https://387b72ivq1z3mni0n261y7l1-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/app-store-video.jpg"
+                alt="*"
             />
         </div>
         <div class="details">
-            <h2>
-                {{ item.title
-                }}<span>
-                    <button
-                        mat-mini-fab
-                        color="primary"
-                        style="transform: scale(0.8);"
-                    >
-                        <mat-icon (click)="delete(item._id)">delete</mat-icon>
-                    </button>
-                   
-                    <button
-                        mat-mini-fab
-                        color="primary"
-                        style="transform: scale(0.8);"
-                    >
-                        <mat-icon (click)="add(item)">add</mat-icon>
-                    </button>
-                    <button
-                    mat-mini-fab
-                    color="primary"
-                    style="transform: scale(0.8);"
-                >  
-                    <mat-icon (click)="show(item)">show</mat-icon>
-                    </button>
-                
-                    <input type="checkbox" [(ngModel)]="item.checked"  >     
-                 <!-- <select [(ngModel)]="selectedValue" multiple>
-                <option *ngFor="let item of list" [ngValue]="item">{{ item.image }}</option>
-                 </select>
-                <button (click)="affiche()">clickme</button>
-                 -->
-                 <!-- <input type="checkbox" (change)="toggleEditable($event)">
-                 <button
-                 mat-mini-fab
-                 color="primary"
-                 style="transform: scale(0.8);"
-             >
-                 <mat-icon (click)="affiche(item)">affiche</mat-icon> -->
-                 <!-- </button> -->
-                </span>
-            </h2>
+            <h2>{{ item.title }}<span> </span></h2>
         </div>
     </div>
-    <!-- <div *ngFor="let item of list">
-        <input type="checkbox" (change)="onChange(item.image, $event.target.checked)"> {{item.image}}<br>
-      </div> -->
-      <!-- <form [formGroup]="myForm"> -->
-        <!-- <div *ngFor="let item of list">
-            <input type="checkbox" (change)="onChange(item.image, $event.target.checked)"> {{item.image}}<br>
-            
-        </div> -->
-    <!-- </form> -->
-    
-    <!-- <pre>Form values: {{myForm.value | json}}</pre> -->
-    <!-- <div class="col-md-4">
-        <h4>List of Hobbies</h4>
-   
-        <ul class="checkbox-items">
-          <li *ngFor="let item of list">
-            <input type="checkbox" name="" id="" [(ngModel)]="item.isChecked" (change)="changeSelection()">{{item.image}}
-          </li>
-        </ul>
-      </div>
-   
-      <div class="col-md-4">
-        <h4>No of Selected Hobbies: {{selectedItemsList.length}} </h4>
-        <ul>
-          <li *ngFor="let item of selectedItemsList">{{item.label}}</li>
-        </ul>
-      </div>
-   
-      <div class="col-md-4">
-        <h4>Object</h4>
-        <code>
-        {{selectedItemsList | json}}
-        </code>
-   
-        <h4>Array of IDs</h4>
-        <code>{{}}</code>
-      </div> -->
-    
-
-
-
-    
     <!-- <div class="card">
         <div class="imgBx">
             <img
@@ -400,5 +282,5 @@ Afficher
             <h2>SomeOne Famous<br /><span>Actor</span></h2>
         </div>
     </div> -->
-
 </div>
+

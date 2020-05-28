@@ -9,50 +9,46 @@ import { HttpClient } from "@angular/common/http";
 export class UploadimageComponent implements OnInit {
     selectedFile: File = null;
     message: string = "";
-    bool:boolean=false;
+    name: string = "";
 
     constructor(private http: HttpClient) {}
 
-    ngOnInit() {
-        
-    }
+    ngOnInit() {}
 
     onFileChanged(event) {
         if (event.target.files && event.target.files[0]) {
             this.selectedFile = event.target.files[0];
+            this.name = this.selectedFile.name;
             console.log(this.selectedFile);
-            this.bool=true;
         }
-    }           
+    }
     onUpload(title, description) {
         // this.http is the injected HttpClient
         this.message = "";
-        if (title === "" || description === "" ||!this.selectedFile ) {
+        if (title === "" || description === "" || !this.selectedFile) {
             this.message = "remplire les champs";
         } else {
             console.log(title);
 
             const formData = new FormData();
-            formData.append("photo", this.selectedFile);
-            formData.append("photo", this.selectedFile.name);
+            formData.append("video", this.selectedFile);
+
+            // formData.append("photo", this.selectedFile.name);
             formData.append("title", title);
             formData.append("description", description);
-            
 
             this.http
-                .post(`http://localhost:4000/uploadphoto`, formData)
+                .post(`http://localhost:4000/uploadvideo`, formData)
                 .subscribe(
                     (res) => {
                         console.log(res);
-                        this.message = "Image has uploaded successfully";
+                        this.message = "Video has uploaded successfully";
                         this.selectedFile = null;
-                        this.selectedFile = null; 
-                        this.bool=false;
-
+                        this.name = "";
                     },
                     (err) => {
                         console.log(err);
-                        this.message = "Please choose an image";
+                        this.message = "Please choose video";
                     }
                 );
         }
