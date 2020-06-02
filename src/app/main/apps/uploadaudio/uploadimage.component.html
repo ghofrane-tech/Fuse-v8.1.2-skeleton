@@ -1,0 +1,68 @@
+
+<div class="b">
+    <input
+        type="text"
+        style="
+            width: 340px;
+            height: 50px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        "
+        name="title"
+        placeholder="Title"
+        #title
+    />
+    <input
+        type="text"
+        name="Description"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="Description"
+        #description
+    />
+
+    <div class="Neon Neon-theme-dragdropbox">
+        <input
+            style="
+                opacity: 0;
+                width: 320px;
+                height: 200px;
+                position: absolute;
+                right: 0px;
+                left: 0px;
+                margin-right: auto;
+                margin-left: auto;
+            "
+            name="files[]"
+            id="filer_input2"
+            #imageInput
+            type="file"
+            accept="audio/*"
+            (change)="onFileChanged($event)"
+        />
+        <div class="Neon-input-dragDrop">
+            <div class="Neon-input-inner">
+                <div class="Neon-input-icon">
+                    <i class="fa fa-file-image-o"></i>
+                </div>
+                <div class="Neon-input-text">
+                    <h3>Drag&amp;Drop audio here</h3>
+                    <span style="display: inline-block; margin: 15px 0;"
+                        >or</span
+                    >
+                </div>
+                <a class="Neon-input-choose-btn blue">Browse audios </a>
+                {{ this.name }}
+            </div>
+        </div>
+    </div>
+    <!-- videos -->
+
+    <a class="forgot-password">{{ message }}</a> <br />
+    <button
+        mat-raised-button
+        color="primary"
+        (click)="onUpload(title.value, description.value)"
+    >
+        Save
+    </button>
+</div>

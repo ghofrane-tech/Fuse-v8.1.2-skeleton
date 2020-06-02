@@ -74,6 +74,10 @@ const routes = [
         loadChildren: "./uploadvideo/uploadimage.module#UploadimageModule",
     },
     {
+        path: "uploadaudio",
+        loadChildren: "./uploadaudio/uploadimage.module#UploadimageModule",
+    },
+    {
         path: "favoritimages",
         loadChildren:
             "./favoritimages/favoritimages.module#FavoritimagesModule",
@@ -81,6 +85,15 @@ const routes = [
     {
         path: "videos",
         loadChildren: "./videoss/images.module#ImagesModule",
+    },
+    {
+        path: "audios",
+        loadChildren: "./audios/images.module#ImagesModule",
+    },
+    {
+        path: "favoritaudios",
+        loadChildren:
+            "./favoritaudios/favoritimages.module#FavoritimagesModule",
     },
     {
         path: "favoritvideos",

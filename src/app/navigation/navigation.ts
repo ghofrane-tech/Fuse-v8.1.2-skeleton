@@ -108,7 +108,27 @@ export const navigation: FuseNavigation[] = [
                 translate: "NAV.DASHBOARDS",
                 type: "collapsable",
                 icon: "dashboard",
-                children: []
+                children: 
+                [{
+                    id: "Upload audio",
+                    title: "Upload audio",
+                    type: "item",
+                    url: "/apps/uploadaudio",
+                },
+                {
+                    id: "UploadImages",
+                    title: "Consulter audio",
+                    type: "item",
+                    url: "/apps/audios",
+                },
+                {
+                    id: "audiopréférées",
+                    title: "audios préférées",
+                    type: "item",
+                    url: "/apps/favoritaudios",
+                },
+
+                ]
             },
             {
                 id: "Gestion affichage",

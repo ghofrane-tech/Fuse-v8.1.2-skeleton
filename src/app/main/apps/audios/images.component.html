@@ -1,0 +1,77 @@
+<div id="bande_horizontale">
+    <label for="ticketNum">temps  :</label>
+    <input #MyInput type = 'number' name="ticketNum" value='0' min='0' max='5000' >
+    <!-- <label for="ticketNum">jour : </label>
+    <input  #Input type='number' name="ticketNum" value='0' min='0' max= '30'> -->
+    <label for="start">Start date:</label>
+    
+    <input #Input type="date" id="start" name="trip-start"
+           value="2020-01-01"
+           min="2020-01-01" max="2020-12-31">
+    <label for="ticketNum">heure :</label>
+    <input  #AInput type='number' name="ticketNum" value='0' min='0' max= '23'>
+    <label for="ticketNum">minutes :</label>
+    <input  #Input2 type="number" name="ticketNum" value='0' min='0' max= '59'>
+    <label for="ticketNum">seconde :</label>
+    <input  #Input3 type="number" name="ticketNum" value='0' min='0' max= '3599' >
+    <label for="ticketNum">heure Actuelle :</label>
+    <input  #Input4 type='number' name="ticketNum" value='0' min='0' max= '23'>
+    <label for="ticketNum">minutes Actuelle :</label>
+    <input  #Input5 type="number" name="ticketNum" value='0' min='0' max= '59'>
+    
+    <!-- <input #MyInput type = 'number'>
+    <input #Input type = 'number'> -->
+    <!-- <input #Input2 type = 'number'>
+    <input #Input3 type = 'number'> -->
+     <!-- <input #Input type="time"step="1"> -->
+    <button
+    color="primary"
+    style="transform: scale(0.8);"
+    (click)="show2(MyInput,Input,AInput,Input2,Input3,Input4,Input5)"
+    >
+    Afficher
+    </button>
+<div class="box">
+    <div class="card" *ngFor="let item of list">
+        <div class="imgBx">
+            <img
+                src="https://387b72ivq1z3mni0n261y7l1-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/app-store-video.jpg"
+                alt="images"
+            />
+        </div>
+        <div class="details">
+            <h2>
+                {{ item.title
+                }}<span>
+                    <button
+                        mat-mini-fab
+                        color="primary"
+                        style="transform: scale(0.8);"
+                    >
+                        <mat-icon (click)="delete(item._id)">delete</mat-icon>
+                    </button>
+                    <button
+                        mat-mini-fab
+                        color="primary"
+                        style="transform: scale(0.8);"
+                    >
+                        <mat-icon (click)="add(item)">add</mat-icon>
+                    </button>
+                    <a
+                        href="http://localhost:4000/img/{{ item.audio }}"
+                        target="_blank"
+                    >
+                        <button
+                            mat-mini-fab
+                            color="primary"
+                            style="transform: scale(0.8);"
+                        >
+                            <mat-icon>videocam</mat-icon>
+                        </button></a
+                    >
+                    <input type="checkbox" [(ngModel)]="item.checked"  > 
+                </span>
+            </h2>
+        </div>
+    </div>
+</div>

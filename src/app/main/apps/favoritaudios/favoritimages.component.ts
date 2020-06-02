@@ -11,10 +11,10 @@ export class FavoritimagesComponent implements OnInit {
     constructor(private http: HttpClient) {}
 
     ngOnInit() {
-        this.http.get(`http://localhost:4000/audio/favorit`).subscribe(
+        this.http.get(`http://localhost:4000/video/favorit`).subscribe(
             (res) => {
                 console.log(res);
-                this.list = res["audios"];
+                this.list = res["videos"];
             },
             (err) => {
                 console.log(err);
