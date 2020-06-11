@@ -103,7 +103,7 @@ export class ImagesComponent implements OnInit {
             }
         );
     }
-    show2(MyInput,Input,AInput,Input2,Input3,Input4,Input5){
+    show3(MyInput,Input,AInput,Input2,Input3,Input4,Input5){
         // { console.log(MyInput.value)
         //     console.log(Input.value)
         //     // console.log(AInput.value)
@@ -128,7 +128,7 @@ export class ImagesComponent implements OnInit {
          )
          console.log(pictues)
          this.http
-                .post(`http://localhost:4000/show2`,{ A, B , C , D,E,G,H, audio:pictues }).subscribe(
+                .post(`http://localhost:4000/show3`,{ A, B , C , D,E,G,H, audio:pictues }).subscribe(
                     (res) => {
                         console.log(res);
                     },

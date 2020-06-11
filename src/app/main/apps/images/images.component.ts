@@ -17,6 +17,7 @@ export class ImagesComponent implements OnInit {
     myForm: FormGroup;
     selectedItemsList = [];
   checkedIDs = [];
+  message: string ="" ;
     // selectedValue: null;
 
     constructor(private http: HttpClient) {}
@@ -96,7 +97,7 @@ export class ImagesComponent implements OnInit {
         //
         console.log("hello world");
     }
-    show1(MyInput,Input,AInput,Input2,Input3,Input4,Input5){
+    show1(MyInput,Input,AInput,Input2,Input3){
     // { console.log(MyInput.value)
     //     console.log(Input.value)
     //     // console.log(AInput.value)
@@ -108,8 +109,6 @@ export class ImagesComponent implements OnInit {
       let C=  AInput.value;
       let D= Input2.value; 
       let E=  Input3.value;
-      let G= Input4.value;
-      let H= Input5.value;
 
       let pictues=[];  
      console.log(this.list);
@@ -121,12 +120,13 @@ export class ImagesComponent implements OnInit {
      )
      console.log(pictues)
      this.http
-            .post(`http://localhost:4000/show1`,{ A, B , C , D,E,G,H, image:pictues }).subscribe(
+            .post(`http://localhost:4000/show1`,{ A, B , C , D,E, image:pictues }).subscribe(
                 (res) => {
                     console.log(res);
                 },
                 (err) => {
                     console.log(err);
+                    this.message="wrong time"
                 }
             )}
     
