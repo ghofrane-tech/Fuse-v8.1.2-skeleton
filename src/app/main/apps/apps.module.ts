@@ -68,6 +68,10 @@ const routes = [
         path: "uploadimage",
         loadChildren: "./uploadimage/uploadimage.module#UploadimageModule",
     },
+    {
+        path: "uploadtemplate",
+        loadChildren: "./uploadtemplate/uploadimage.module#UploadimageModule",
+    },
     
     {
         path: "uploadvideo",

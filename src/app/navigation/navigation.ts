@@ -100,7 +100,14 @@ export const navigation: FuseNavigation[] = [
                 translate: "NAV.DASHBOARDS",
                 type: "collapsable",
                 icon: "dashboard",
-                children: []
+                children: [
+                    {
+                             id: "Upload template",
+                              title: "Upload template",
+                                type: "item",
+                                url: "/apps/uploadtemplate"
+                            }
+                ]
             },
             {
                 id: "Gestion audio",
@@ -127,23 +134,39 @@ export const navigation: FuseNavigation[] = [
                     type: "item",
                     url: "/apps/favoritaudios",
                 },
+                
 
                 ]
             },
-            {
-                id: "Gestion affichage",
-                title: "Gestion affichage",
-                translate: "NAV.DASHBOARDS",
-                type: "collapsable",
-                icon: "dashboard",
-                children: [
-                    {
-                        id: "AfficherImage",
-                        title: "AfficherImage",
-                        type: "item",
-                        url: "/apps/AfficherImage"
-            }]
-            },
+            // {
+            //     id: "Gestion template",
+            //     title: "Gestion template",
+            //     translate: "NAV.DASHBOARDS",
+            //     type: "collapsable",
+            //     icon: "dashboard",
+            //     children: 
+            //     [{
+            //         id: "Upload template",
+            //         title: "Upload template",
+            //         type: "item",
+            //         url: "/apps/uploadtemplate"
+            //     }]
+            //      },
+            
+            // {
+            //     id: "Gestion affichage",
+            //     title: "Gestion affichage",
+            //     translate: "NAV.DASHBOARDS",
+            //     type: "collapsable",
+            //     icon: "dashboard",
+            //     children: [
+            //         {
+            //             id: "AfficherImage",
+            //             title: "AfficherImage",
+            //             type: "item",
+            //             url: "/apps/AfficherImage"
+            // }]
+            // },
 
             {
                 id: "Logout",

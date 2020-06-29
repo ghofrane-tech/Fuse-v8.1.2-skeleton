@@ -1,0 +1,121 @@
+<div class="b">
+    
+   
+
+    <input
+        type="text"
+        style="
+            width: 340px;
+            height: 50px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        "
+        name="title"
+        placeholder="Title"
+        #title
+    />
+    <input
+        type="text"
+        name="Description"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="Description"
+        #description
+    />
+    <input
+        type="text"
+        name="écrivez votre message içi"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="text1"
+        #text1
+    />
+    <input
+        type="text"
+        name="écrivez votre message içi"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="text2"
+        #text2
+    />
+    <input
+        type="text"
+        name="position X pour la 1iére zone texte"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="text3"
+        #textPositionX
+    />
+    <input
+        type="text"
+        name="position Y pour la 1iére zone texte"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="text4"
+        #textPositionY
+    />
+    <input
+        type="text"
+        name="position x pour logo"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="text5"
+        #logoPositionX
+    />
+    <input
+        type="text"
+        name="position Y pour logo"
+        style="width: 340px; height: 50px; margin-bottom: 20px;"
+        placeholder="text6"
+        #logoPositionY
+    />
+     <!-- <div class="Neon Neon-theme-dragdropbox">
+        <input
+            style="
+                opacity: 0;
+                width: 320px;
+                height: 200px;
+                position: absolute;
+                right: 0px;
+                left: 0px;
+                margin-right: auto;
+                margin-left: auto;
+            "
+           name="files[]"
+           id="filer_input2"
+           #imageInput
+           type="file"
+           accept="image/*"
+           (change)="onFileChanged($event)"
+          
+
+        
+          
+        />
+        <div class="Neon-input-dragDrop">
+            <div class="Neon-input-inner">
+                <div class="Neon-input-icon">
+                    <i class="fa fa-file-image-o"></i>
+                </div>
+                <div class="Neon-input-text">
+                    <h3>Drag&amp;Drop files here</h3>
+                    <span style="display: inline-block; margin: 15px 0;"
+                        >or</span
+                    >
+                </div>
+                <a class="Neon-input-choose-btn blue">Browse Files 
+                     </a> 
+                <div *ngIf="this.bool">{{this.selectedFile.name}}</div>
+                      
+            </div>
+          
+        </div> -->
+        
+    
+    <a class="forgot-password">{{ message }}</a> <br />
+    <button
+    mat-raised-button
+    color="primary"
+    (click)="onUpload(title.value, description.value, text1.value, text2.value, logoPositionX.value, logoPositionY.value, textPositionX.value, textPositionY.value)"
+    
+
+     >
+    Save
+    </button>
+
+   
+</div>
